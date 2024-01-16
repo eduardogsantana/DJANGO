@@ -1,0 +1,35 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livraria</title>
+</head>
+<body background="{% static 'home/images/fundo.png' %}">
+    <div style="width:900px; margin:0px auto;">
+        <img width="145" src="{% static 'home/images/logo.png' %}">
+        <a href="#" style="margin-left: 50%;">Home</a>
+        <a href="#">Quem somos</a>
+        <a href="#">Contatos</a>
+    </div>
+    <div style="width: 900; margin: 0px auto;">
+        <img style= "width:600px; margin:5px auto; display:block " src="{% static 'home/images/capa.png' %}">
+    </div>
+    <div style="width: 900px; margin: 0px auto;">
+        {% for livro in livros %}
+        <div style="width: 250px; display: inline=block">
+            <h3>Nome do Livro: {{ livro.nome_livro }} </h3>
+            <p>Ano da publicação: {{ livro.ano_publicacao }} </p>
+            <p>Quantidade de Páginas: {{ livro.quantidade_paginas }} </p>
+            <p>Nome do Autor: {{ livro.nome_autor }} </p>
+            <p>Nome da Editora: {{ livro.nome_editora }} </p>
+            <hr>
+            <span>Preço: {{ produto.preco }}</span>
+            <hr>
+            <a href="#">Saiba mais</a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
