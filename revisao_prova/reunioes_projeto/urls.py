@@ -12,4 +12,3 @@ urlpatterns = [
     path('delete/<int:id>', delete_reuniao, name='delete'),
     path('api_reunioes_projeto', include(router.urls))
 ]
-

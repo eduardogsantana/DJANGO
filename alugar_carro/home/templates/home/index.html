@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alugar Carros - Carros disponíveis.</title>
+</head>
+<body>
+    <h2>CARROS</h2>
+    <div style="width:900px; margin:20px auto;">
+        <a href="{% url 'cadastro' %}">CADASTRO DE CLIENTES</a>
+        <br><br>
+        {% for alugar in alugar_carros %}
+            <div>
+                <img src="media/{{ alugar.foto }}" width="250" heigth="300">
+                <h3>Modelo do Carro: {{ alugar.modelo }}</h3>
+                <p>Descrição: {{ alugar.descricao }}</p>
+                <p>Ano de Fabricação: {{ alugar.ano_fabricacao }}</p>
+                <p>Valor da diária: R${{ alugar.valor }}</p>
+                <span>Avaliação: {{ alugar.avaliacao }}</span>
+            </div>
+        {% endfor %}
+
+    
+</body>
+</html>
